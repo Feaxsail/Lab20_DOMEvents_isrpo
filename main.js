@@ -16,12 +16,27 @@ text.style.color = "darkgreen";
 
 const btn = document.getElementById("btn");
 
-
 btn.addEventListener("click", () => {
    
     alert("Кнопка нажата!");
     
- 
     btn.style.backgroundColor = "#4CAF50"; 
     btn.style.color = "white";             
+});
+
+const nameInput = document.getElementById("nameInput");
+const greetBtn = document.getElementById("greetBtn");
+const output = document.getElementById("output");
+
+greetBtn.addEventListener("click", () => {
+
+    if (nameInput.value !== "") {
+   
+        output.textContent = `Привет, ${nameInput.value}!`;
+        output.style.color = "black"; 
+    } else {
+      
+        output.textContent = "Ошибка: Введите имя!";
+        output.style.color = "red";
+    }
 });
