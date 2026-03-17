@@ -43,25 +43,47 @@ greetBtn.addEventListener("click", () => {
 
 const clearBtn = document.getElementById("clearBtn");
 clearBtn.addEventListener("click", () => {
-  
     nameInput.value = "";
     output.textContent = "";
-   
     nameInput.style.backgroundColor = "white";
-    nameInput.focus(); 
+    nameInput.focus();
 });
+
 
 const userForm = document.getElementById("userForm");
 const formOutput = document.getElementById("formOutput");
 
-
 userForm.addEventListener("submit", (event) => {
-  
+    
     event.preventDefault();
 
-    const name = document.getElementById("formName").value;
-    const age = document.getElementById("formAge").value;
+ 
+    const nameInput = document.getElementById("formName");
+    const ageInput = document.getElementById("formAge");
+
+   
+    const name = nameInput.value.trim();
+    const age = ageInput.value.trim();
+
+ 
+    if (name === "") {
+        formOutput.textContent = "Ошибка: Имя не может быть пустым!";
+        formOutput.style.color = "red";
+        nameInput.focus(); 
+        return; 
+    }
+
+ 
+    if (age === "" || isNaN(age)) {
+        formOutput.textContent = "Ошибка: Введите корректный возраст!";
+        formOutput.style.color = "red";
+        ageInput.focus(); 
+        return; 
+    }
 
     formOutput.textContent = `Пользователь: ${name}, Возраст: ${age}`;
-    formOutput.style.color = "black";
+    formOutput.style.color = "green";
+
+  
+    userForm.reset();
 });
