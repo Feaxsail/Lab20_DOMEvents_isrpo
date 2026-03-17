@@ -40,3 +40,14 @@ greetBtn.addEventListener("click", () => {
         output.style.color = "red";
     }
 });
+
+const clearBtn = document.getElementById("clearBtn");
+clearBtn.addEventListener("click", () => {
+  
+    nameInput.value = "";
+    output.textContent = "";
+   
+    nameInput.style.backgroundColor = "white";
+    nameInput.focus(); 
+});
+
