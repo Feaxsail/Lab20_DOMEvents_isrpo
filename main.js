@@ -51,3 +51,17 @@ clearBtn.addEventListener("click", () => {
     nameInput.focus(); 
 });
 
+const userForm = document.getElementById("userForm");
+const formOutput = document.getElementById("formOutput");
+
+
+userForm.addEventListener("submit", (event) => {
+  
+    event.preventDefault();
+
+    const name = document.getElementById("formName").value;
+    const age = document.getElementById("formAge").value;
+
+    formOutput.textContent = `Пользователь: ${name}, Возраст: ${age}`;
+    formOutput.style.color = "black";
+});

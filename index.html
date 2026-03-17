@@ -15,11 +15,28 @@
     <div style="margin-top: 20px;">
         <input type="text" id="nameInput" placeholder="Введите ваше имя">
         <button id="greetBtn">Приветствовать</button>
-
         <button id="clearBtn">Очистить</button>
-        
         <p id="output"></p>
     </div>
+
+    <form id="userForm" style="margin-top: 30px; border: 1px solid #ccc; padding: 15px;">
+        <h2>Регистрация</h2>
+        <label>
+            Имя: 
+            <input type="text" id="formName" required>
+        </label>
+        <br><br>
+        <label>
+            Возраст: 
+            <input type="text" id="formAge">
+        </label>
+        <br><br>
+        
+        <button type="submit">Отправить</button>
+    </form>
+    
+ 
+    <div id="formOutput" style="margin-top: 10px; font-weight: bold;"></div>
 
     <script src="main.js"></script>
 </body>
